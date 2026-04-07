@@ -1,0 +1,31 @@
+resources:
+  jobs:
+    New_Job_Apr_07_2026_01_38_PM:
+      name: New Job Apr 07, 2026, 01:38 PM
+      schedule:
+        quartz_cron_expression: 24 0 13 * * ?
+        timezone_id: America/Sao_Paulo
+        pause_status: UNPAUSED
+      tasks:
+        - task_key: Atividade_land_to_bronze
+          notebook_task:
+            notebook_path: /Workspace/Users/limafrqa@gmail.com/Atividade 01 -
+              RockLab/Atividade_land_to_bronze.ipynb
+            source: WORKSPACE
+        - task_key: Atividade_bronze_to_silver
+          depends_on:
+            - task_key: Atividade_land_to_bronze
+          notebook_task:
+            notebook_path: /Workspace/Users/limafrqa@gmail.com/Atividade 01 -
+              RockLab/Atividade_bronze_to_silver.ipynb
+            source: WORKSPACE
+        - task_key: Atividade_silver_to_gold
+          depends_on:
+            - task_key: Atividade_bronze_to_silver
+          notebook_task:
+            notebook_path: /Workspace/Users/limafrqa@gmail.com/Atividade 01 -
+              RockLab/Atividade_silver_to_gold.ipynb
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
