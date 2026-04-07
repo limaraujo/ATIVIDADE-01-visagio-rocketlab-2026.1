@@ -1,0 +1,25 @@
+# Dependências do Projeto - Engenharia de Dados Databricks
+# ===================================================================
+
+# PySpark (Databricks Runtime inclui automaticamente)
+# pyspark>=3.5.0  # Incluído no Databricks Runtime
+
+# HTTP e APIs
+requests>=2.31.0
+
+# Utilitários
+python-dateutil>=2.8.2
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# Data Processing (opcional para desenvolvimento local)
+pandas>=2.0.3
+numpy>=1.24.3
+
+# Jupyter (apenas para desenvolvimento local)
+jupyter>=1.0.0
+jupyterlab>=4.0.9
+ipython>=8.12.2
+
+# Databricks Utilities (incluído no Databricks Runtime)
+# databricks-sdk  # Opcional: para automação além dos notebooks
